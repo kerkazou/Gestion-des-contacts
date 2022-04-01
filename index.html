@@ -25,67 +25,69 @@
                 </ul>
                 <form class="col-3 d-flex justify-content-evenly">
                     <input class="form-control me-3 d-none" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary me-3" type="button">Sign In</button>
-                    <button class="btn btn-outline-secondary me-3" type="button">Sign Up</button>
+                    <button class="btn btn-outline-secondary me-3 nav_sign_in" type="button">Sign In</button>
+                    <button class="btn btn-outline-secondary me-3 nav_sign_up" type="button">Sign Up</button>
                 </form>
             </div>
         </div>
     </nav>
 
     <!---------------------- Container ---------------------->
-    <div class="d-md-flex lign-items-center overflow-hidden" style="margin-top: 9%;">
-        <div class="col-7">
-            <img src="svg/undraw_profile_re_4a55.svg" style="width: 80%; margin-left: 10%;">
+    <div class="d-md-flex lign-items-center overflow-hidden">
+        <div class="col-7" style="margin-top: 9%;">
+            <img src="svg/undraw_profile_re_4a55.svg" id="img_index" style="width: 80%; margin-left: 10%;">
         </div>
-        <div class="col-5 align-items-center" style="margin-top: 9%; margin-left: 2%;">
+                <!---------------------- Text ---------------------->
+        <div class="col-5 align-items-center" id="text_index" style="margin-top: 15%; margin-left: 2%;">
             <h1>Hello!</h1>
             <h4><a href="sign_up.html">Sign up</a> to start creating your Contacts list.</h4>
             <h4>Already have an acount? <a href="sign_in.html">Login here</a>.</h4>
         </div>
-    </div>
+                <!---------------------- Sign ---------------------->
+        <div class="my-5 col-4" id="sign">
+            <div class="card">
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item col-6"><button type="button" class="nav-link tm-nav-link-border-right w-100 text-center active" id="btn_sign_in">Sign In</button></li>
+                        <li class="nav-item col-6"><button type="button" class="nav-link tm-no-border-right w-100 text-center" id="btn_sign_up">Sign Up</button></li>
+                    </ul>
+                </div>
+                        <!---------------------- Sign In ---------------------->
+                <div class="card-body" id="sign_in">
+                    <h3 class="text-center mt-4">SIGN IN</h3>
+                    <form class="d-flex flex-column" method="POST" action="">
+                        <label class="d-block mt-4 text-secondary" for="">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
+                        <label class="d-block mt-4 text-secondary" for="">Password</label>
+                        <input type="password" name="pass" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
+                        <div>
+                            <input type="checkbox" class="mt-4 mx-2" name="checked" id="checked">
+                            <label for="checked" class="text-secondary">keep me signed in on this device</label>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-outline-secondary w-50 my-3 mx-auto">SIN IN</button>
+                    </form>
+                    <p class="mt-3 mb-0 text-center">Forget your password?<a class="btn btn-link" style="color: #00C1FE;">Reset Password</a></p>
+                </div>
 
-    <!---------------------- Sign In ---------------------->
-    <div class="my-5">
-        <div class="card col-6">
-            <div>
-                <ul class="nav nav-tabs">
-                    <li class="nav-item col-6"><a class="nav-link tm-nav-link-border-right text-center active">Sign In</a></li>
-                    <li class="nav-item col-6"><a class="nav-link tm-no-border-right text-center">Sign Up</a></li>
-                  </ul>
-            </div>
-            <div class="card-body d-none">
-                <h3 class="text-center mt-4">SIGN IN</h3>
-                <form method="POST" action="conn_session.php">
-                    <label class="d-block mt-4 text-secondary" for="">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
-                    <label class="d-block mt-4 text-secondary" for="">Password</label>
-                    <input type="password" name="pass" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
-                    <input type="checkbox" class="mt-4 mx-2" name="checked" id="checked">
-                    <label for="checked" class="text-secondary">keep me signed in on this device</label>
-                    <button type="submit" name="submit" class="btn btn-outline-secondary w-100 mt-4">SIN IN</button>
-                </form>
-                <p class="mt-3 mb-0 text-center">Forget your password?<a class="btn btn-link" style="color: #00C1FE;">Reset Password</a></p>
-
-            </div>
-            <div class="card-body">
-                <h3 class="text-center mt-3">SIGN IN</h3>
-                <form class="d-flex flex-column" method="POST" action="conn_session.php">
-                    <label class="d-block mt-4 text-secondary" for="">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Enter your username" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
-                    <label class="d-block mt-4 text-secondary" for="">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
-                    <label class="d-block mt-4 text-secondary" for="">Password</label>
-                    <input type="password" name="pass" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
-                    <label class="d-block mt-4 text-secondary" for="">Confirm password</label>
-                    <input type="password" name="cont_pass" placeholder="Confirm your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
-                    <div>
-                        <input type="checkbox" class="mt-4 mx-2" name="checked" id="checked">
-                        <label for="checked" class="text-secondary">keep me signed in on this device</label>
-                    </div>
-                    <button type="submit" name="submit" class="btn btn-outline-secondary w-50 my-3 mx-auto">SIN IN</button>
-                </form>
+                        <!---------------------- Sign Up ---------------------->
+                <div class="card-body" id="sign_up">
+                    <h3 class="text-center mt-2">SIGN UP</h3>
+                    <form class="d-flex flex-column" method="POST" action="">
+                        <label class="d-block mt-3 text-secondary" for="">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Enter your username" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
+                        <label class="d-block mt-3 text-secondary" for="">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
+                        <label class="d-block mt-3 text-secondary" for="">Password</label>
+                        <input type="password" name="pass" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
+                        <label class="d-block mt-3 text-secondary" for="">Confirm password</label>
+                        <input type="password" name="cont_pass" placeholder="Confirm your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
+                        <button type="submit" name="submit" class="btn btn-outline-secondary w-50 my-4 mx-auto">SIN UP</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<script src="index.js"></script>
