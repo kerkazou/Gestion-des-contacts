@@ -26,47 +26,53 @@ const btn_sign_up = document.getElementById('btn_sign_in');
 const sign_in = document.getElementById('sign_in');
 const sign_up = document.getElementById('sign_up');
 sign_up.style.display = "none";
-btn_sign_in.addEventListener('click', (e) => {
+btn_sign_in.addEventListener('click', () => {
     sign_up.style.display = "block";
     sign_in.style.display = "none";
     btn_sign_up.classList.remove('active');
     btn_sign_in.classList.add('active');
 });
-btn_sign_up.addEventListener('click', (e) => {
+btn_sign_up.addEventListener('click', () => {
     sign_in.style.display = "block";
     sign_up.style.display = "none";
     btn_sign_in.classList.remove('active');
     btn_sign_up.classList.add('active');
 });
 
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const conf_password = document.getElementById('conf_password');
+const username_sign_up = document.getElementById('username_sign_up');
+// const error_username = document.querySelector('error_username');
+const email_sign_up = document.getElementById('email_sign_up');
+// const error_email = document.getElementById('error_email');
+const password_sign_up = document.getElementById('password_sign_up');
+// const conf_password_sign_up = document.getElementById('conf_password_sign_up');
 
-function validation_username() {
+function validation_username_sign_up() {
     const pattern_username = /[a-zA-Z]/;
-    if(pattern_username.test('username') && username.value.length >= 2) {
-        username.style.color = "green";
+    if(pattern_username.test('username') && username_sign_up.value.length >= 2) {
+        username_sign_up.style.color = "green";
     }else{
-        username.style.color = "red";
+        username_sign_up.style.color = "red";
     }
 }
-function validation_email() {
+function validation_email_sign_up() {
     const pattern_email = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-    if(pattern_email.test(email.value)){
-        email.style.color = "green";
+    if(pattern_email.test(email_sign_up.value)){
+        email_sign_up.style.color = "green";
     }else{
-        email.style.color = "red";
+        email_sign_up.style.color = "red";
     }
 }
-function validation_password() {
-    if(password.value.length >= 5){
-        password.style.color = "green";
+function validation_password_sign_up() {
+    if(password_sign_up.value.length >= 5){
+        password_sign_up.style.color = "green";
     }else{
-        password.style.color = "red";
+        password_sign_up.style.color = "red";
     }
 }
+
+        // error_username.innerText = "The username should contain only three characters and be alphanumeric only.";
+        // error_email.innerText = "The email is invalid."
+
 
 // document.getElementById('form_sign_up').addEventListener("submit" , function(e){
 //         if(password.value == conf_password.value){
@@ -77,8 +83,6 @@ function validation_password() {
 //             console.log('no')
 //         }
 // })
-
-
 
 
 
