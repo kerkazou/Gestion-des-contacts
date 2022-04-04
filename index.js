@@ -38,3 +38,56 @@ btn_sign_up.addEventListener('click', (e) => {
     btn_sign_in.classList.remove('active');
     btn_sign_up.classList.add('active');
 });
+
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const conf_password = document.getElementById('conf_password');
+
+function validation_username() {
+    const pattern_username = /[a-zA-Z]/;
+    if(pattern_username.test('username') && username.value.length >= 2) {
+        username.style.color = "green";
+    }else{
+        username.style.color = "red";
+    }
+}
+function validation_email() {
+    const pattern_email = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+    if(pattern_email.test(email.value)){
+        email.style.color = "green";
+    }else{
+        email.style.color = "red";
+    }
+}
+function validation_password() {
+    if(password.value.length >= 5){
+        password.style.color = "green";
+    }else{
+        password.style.color = "red";
+    }
+}
+
+// document.getElementById('form_sign_up').addEventListener("submit" , function(e){
+//         if(password.value == conf_password.value){
+//             e.preventDefault();
+//             console.log('ok')
+//         }else{
+//             e.preventDefault();
+//             console.log('no')
+//         }
+// })
+
+
+
+
+
+// Le nom d'utilisateur doit comporter au moins trois caractères et être uniquement alphanumérique
+// The username should contain only numbers and letters
+
+// Le mot de passe doit comporter au moins six caractères
+
+// - Nom : obligatoire ; au moins deux caractères
+// - Téléphone : facultatif ; ne doit autoriser que +-() 1234567890
+// - E-mail : obligatoire ; doit être validé
+// - Adresse : facultative ; 255 caractères maximum

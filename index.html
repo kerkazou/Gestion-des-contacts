@@ -55,11 +55,12 @@
                         <!---------------------- Sign In ---------------------->
                 <div class="card-body" id="sign_in">
                     <h3 class="text-center mt-4">SIGN IN</h3>
+                    <p class="text-center text-secondary">Enter your credentials to access your account</p>
                     <form class="d-flex flex-column" method="POST" action="">
                         <label class="d-block mt-4 text-secondary" for="">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
+                        <input type="text" name="email" id="email" onchange="validation_email()" onkeypress="validation_email()" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                         <label class="d-block mt-4 text-secondary" for="">Password</label>
-                        <input type="password" name="pass" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
+                        <input type="password" name="pass" id="password" onchange="validation_password()" onkeypress="validation_password()" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
                         <div>
                             <input type="checkbox" class="mt-4 mx-2" name="checked" id="checked">
                             <label for="checked" class="text-secondary">keep me signed in on this device</label>
@@ -72,16 +73,17 @@
                         <!---------------------- Sign Up ---------------------->
                 <div class="card-body" id="sign_up">
                     <h3 class="text-center mt-2">SIGN UP</h3>
-                    <form class="d-flex flex-column" method="POST" action="">
+                    <p class="text-center text-secondary">Please fill out the form below to create your account!</p>
+                    <form class="d-flex flex-column" method="POST" id="form_sign_up" action="">
                         <label class="d-block mt-3 text-secondary" for="">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Enter your username" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
+                        <input type="text" name="username" id="username" onchange="validation_username()" onkeypress="validation_username()" placeholder="Enter your username" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                         <label class="d-block mt-3 text-secondary" for="">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
+                        <input type="text" name="email" id="email" onchange="validation_email()" onkeypress="validation_email()" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                         <label class="d-block mt-3 text-secondary" for="">Password</label>
-                        <input type="password" name="pass" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
+                        <input type="password" name="pass" id="password" onchange="validation_password()" onkeypress="validation_password()" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
                         <label class="d-block mt-3 text-secondary" for="">Confirm password</label>
-                        <input type="password" name="cont_pass" placeholder="Confirm your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
-                        <button type="submit" name="submit" class="btn btn-outline-secondary w-50 my-4 mx-auto">SIN UP</button>
+                        <input type="password" name="cont_pass" id="conf_password" placeholder="Confirm your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
+                        <button type="submit" name="submit" class="btn btn-outline-secondary w-50 mt-4 mb-0 mx-auto">SIN UP</button>
                     </form>
                 </div>
             </div>
