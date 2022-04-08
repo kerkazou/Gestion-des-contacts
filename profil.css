@@ -1,0 +1,21 @@
+.profile{
+    margin-top:20px;
+}
+.profile .img_block{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+    
+}
+.profile .img_block img{
+    border-radius:5px;
+    box-shadow:0 0 10px rgba(189, 182, 182, 0.63);
+}
+.profile h4{
+    color:#4E5E30;
+    font-weight:600;
+}
+.profile p{
+    color: white;
+}
