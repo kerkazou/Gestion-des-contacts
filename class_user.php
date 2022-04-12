@@ -12,10 +12,8 @@
         }
     }
 
-
-
-
-
     // $users = new User();
     // $users->setpassword("zakaria");
     // echo $users->getpassword();
+
+?>
