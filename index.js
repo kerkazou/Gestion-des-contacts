@@ -79,6 +79,8 @@ btn_sign_up.addEventListener('click', () => {
 
         // error_username.innerText = "The username should contain only three characters and be alphanumeric only.";
         // error_email.innerText = "The email is invalid."
+        // const patern_phone = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+        // /[0-9]{10}/
 
 
 // document.getElementById('form_sign_up').addEventListener("submit" , function(e){

@@ -96,14 +96,6 @@ validation_sign_up.addEventListener('click', (e)=> {
     }
 });
 
-// function conf_password_up() {
-//     if(conf_password_sign_up.value == password_sign_up.value){
-//         conf_password_sign_up.style.color = "green";
-//     }else{
-//         conf_password_sign_up.style.color = "red";
-//     }
-// }
-
 conf_password_sign_up.addEventListener('keyup', (e)=> {
     if(conf_password_sign_up.value == password_sign_up.value){
         conf_password_sign_up.style.color = "green";
@@ -111,3 +103,5 @@ conf_password_sign_up.addEventListener('keyup', (e)=> {
         conf_password_sign_up.style.color = "red";
     }
 });
+
+// window.location.href = "http://www.w3schools.com";
