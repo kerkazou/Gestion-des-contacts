@@ -14,10 +14,10 @@
         }
 
         public function select() {
-            $query = $query = "SELECT * FROM users";
-            $resu = mysqli_query($this->connect, $query);
-            $users = mysqli_fetch_assoc($resu);
-            var_dump($users);
+            $db = ConData::connection_database();
+            $sql = "SELECT * FROM users";
+            $users = $db->query($sql);
+            var_dump($users->fetch());
         }
     }
 

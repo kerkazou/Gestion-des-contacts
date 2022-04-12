@@ -1,18 +1,17 @@
 <?php
     class ConData {
-        private $servername = "localhost";
-        private $username = "root";
-        private $password = "";
+        private static $servername = "localhost";
+        private static $username = "root";
+        private static $password = "";
 
-        public function connection_database() {
-            $connect = new PDO("mysql:host=$this->servername;dbname=gestion_des_contacts", $this->username, $this->password);
+        public static function connection_database() {
+            $connect = new PDO("mysql:host=".self::$servername.";dbname=gestion_des_contacts", self::$username, self::$password);
             if(!$connect){
                 die('error!');
             }
-            return $this->connect = $connect;
+            return $connect;
         }
     }
 
-    // $connection = new ConData();
-    // $connection->connection_database();
+    
 ?>
