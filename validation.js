@@ -94,6 +94,10 @@ validation_sign_up.addEventListener('click', (e)=> {
         e.preventDefault;
         error_conf_password_sign_up.innerText = "";
     }
+
+    if(((pattern_username.test(username_sign_up.value)) && (username_sign_up.value.length >= 3))&&(pattern_email.test(email_sign_up.value))&&(password_sign_up.value.length >= 6)&&(conf_password_sign_up.value == password_sign_up.value)){
+        window.location.href = "sign_up.php";
+    }
 });
 
 conf_password_sign_up.addEventListener('keyup', (e)=> {
