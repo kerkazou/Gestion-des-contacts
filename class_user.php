@@ -6,6 +6,10 @@
         public $email;
         private $password;
 
+        public $em;
+        public $na;
+        public $pas;
+
         public function setpassword($password) {
             $this->password = $password;
         }
@@ -17,11 +21,19 @@
             $db = ConData::connection_database();
             $sql = "SELECT * FROM users";
             $users = $db->query($sql);
-            var_dump($users->fetch());
+            $result = $users->fetchAll();
+            return $result;
+        }
+
+        public function insert($em , $na , $pas) {
+            $db = ConData::connection_database();
+            $sql = "INSERT INTO users VALUES(NULL , '$na' , '$em' ,'$pas')";
+            $users = $db->query($sql);
         }
     }
 
 
     $users = new User();
-    $users->select();
+    // $users->insert("a" , "z@gmail.com" , "0000");
+    var_dump($users->select());
 ?>
