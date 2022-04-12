@@ -36,6 +36,12 @@
             $sql = "DELETE FROM users WHERE id=$id";
             $users = $db->query($sql);
         }
+
+        public function update($id , $na , $em , $pas) {
+            $db = ConData::connection_database();
+            $sql = "UPDATE users SET usename = '$na', email = '$em', pass = '$pas' WHERE id=$id";
+            $users = $db->query($sql);
+        }  
     }
 
 
@@ -43,4 +49,5 @@
     echo $users->select("email");   //Afichage
     // $users->insert("a" , "z@gmail.com" , "0000");     //Insert
     // $users->delete("6");   //Delete
+    // $users->update("2" , "Zwaks" , "zwaks@gmail.com" , "0000");    //Update
 ?>
