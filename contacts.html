@@ -34,28 +34,6 @@
                     <i class="bi bi-caret-down-fill h5" id="profile_icone"></i>
                 </div>
             </form>
-
-            <!-- <div>
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <div class="col-md-3 col-sm-6 col-12 text-center float-end text-light">
-                        <div class="card profile bg-dark pb-2">
-                            <div class="img_block">
-                                <img class="card-img-top" src="USER/profil.jpg" alt="Your image">
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title text-center f-bold">Username</h4>
-                                <p class="text-start">Signup date:</p>
-                                <p class="text-start ">Last login:</p>
-                                <button class="btn btn-outline-secondary" type="button" style="width: 40%;">Logout</button>
-                          </div>
-                        </div>
-                    </div>
-                </ul>
-            </div> -->
-
           </div>
         </div>
       </nav>
@@ -90,22 +68,62 @@
         <hr style="width: 70%; margin-left: 15%; margin-top: 0px;">
 
         <!-- Afichage des contactes -->
-        <div class="d-flex justify-content-center align-items-center gap-2">
-            <div class="d-sm-flex user">
-                <div class="image">
-                    <img src="USER/profil.jpg" alt="Contact1">
+        <div class="d-flex justify-content-center flex-wrap gap-5">
+            <div class="d-flex align-items-center gap-2">
+                <div class="d-sm-flex user">
+                    <div class="image">
+                        <img src="USER/profil.jpg" alt="Contact1">
+                    </div>
+                    <div class="details">
+                        <h3>User 1</h3>
+                        <p><i class="bi bi-telephone me-2"></i>06.00.00.00.00</p>
+                        <p><i class="bi bi-envelope me-2"></i>User1@gmail.com</p>
+                        <p><i class="bi bi-geo-alt me-2"></i>Adress</p>
+                    </div>
                 </div>
-                <div class="details">
-                    <h3>KERKAZOU ZAKARIA</h3>
-                    <p><i class="bi bi-telephone me-2"></i>06.22.76.69.15</p>
-                    <p><i class="bi bi-envelope me-2"></i>kerkazou.zakaria@gmail.com</p>
-                    <p><i class="bi bi-geo-alt me-2"></i>Qu zellaka rue 20 n°37 Youssoufia</p>
+                <div class="nav_user">
+                    <span><i class="bi bi-pencil-square"></i></span>
+                    <span></span>
+                    <span><i class="bi bi-trash"></i></span>
                 </div>
             </div>
-            <div class="nav_user">
-                <span><i class="bi bi-pencil-square"></i></span>
-                <span></span>
-                <span><i class="bi bi-trash"></i></span>
+
+            <div class="d-flex align-items-center gap-2">
+                <div class="d-sm-flex user">
+                    <div class="image">
+                        <img src="USER/profil.jpg" alt="Contact1">
+                    </div>
+                    <div class="details">
+                        <h3>User 2</h3>
+                        <p><i class="bi bi-telephone me-2"></i>06.22.22.22.22</p>
+                        <p><i class="bi bi-envelope me-2"></i>User2@gmail.com</p>
+                        <p><i class="bi bi-geo-alt me-2"></i>Adress</p>
+                    </div>
+                </div>
+                <div class="nav_user">
+                    <span><i class="bi bi-pencil-square"></i></span>
+                    <span></span>
+                    <span><i class="bi bi-trash"></i></span>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
+                <div class="d-sm-flex user">
+                    <div class="image">
+                        <img src="USER/profil.jpg" alt="Contact1">
+                    </div>
+                    <div class="details">
+                        <h3>User 3</h3>
+                        <p><i class="bi bi-telephone me-2"></i>06.33.33.33.33</p>
+                        <p><i class="bi bi-envelope me-2"></i>User3@gmail.com</p>
+                        <p><i class="bi bi-geo-alt me-2"></i>Adress Adress Adress Adress</p>
+                    </div>
+                </div>
+                <div class="nav_user">
+                    <span><i class="bi bi-pencil-square"></i></span>
+                    <span></span>
+                    <span><i class="bi bi-trash"></i></span>
+                </div>
             </div>
         </div>
     </div>
@@ -114,20 +132,33 @@
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Add Contact</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-dark">
+                <h4 class="modal-title text-light" id="staticBackdropLabel">Add Contact</h4>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form method="POST" class="container" action="">
-                        <input class="form-control my-3" name="name" placeholder="Name" type="text" required>
-                        <input class="form-control my-3" name="phone" placeholder="Phone" type="text" required>
-                        <input class="form-control my-3" name="email" placeholder="Email" type="text" required>
-                        <input class="form-control my-3" name="date" placeholder="Enter adress" type="date" required>
+                        <div class="form-floating mb-3">
+                            <input class="form-control mb-3" name="name" type="text" required id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control mb-3" name="Phone"type="text" required id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Phone</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control mb-3" name="email" type="text" required id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Adress email</label>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Adress...</label>
+                          </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" name="add" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-outline-secondary me-3" name="add" type="submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -137,9 +168,3 @@
 </html>
 
 <script src="contacts.js"></script>
-<script>
-    const nav_user = document.querySelector('.nav_user');
-    nav_user.onclick = function() {
-        nav_user.classList.toggle('active');
-    }
-</script>

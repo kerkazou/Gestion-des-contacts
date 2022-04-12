@@ -1,3 +1,4 @@
+// profile
 function profile() {
     const profile = document.getElementById('profile');
     const profile_icone = document.getElementById('profile_icone');
@@ -11,3 +12,11 @@ function profile() {
         profile_icone.classList.add('bi-caret-down-fill');  
     }
 }
+
+// Navbar User
+const nav_user = Array.from(document.querySelectorAll('.nav_user'));
+nav_user.map( nav_user => {
+    nav_user.addEventListener('click', (e) => {
+        nav_user.classList.toggle('active');
+    });
+});
