@@ -9,6 +9,10 @@
             if(!$connect){
                 die('error!');
             }
+            return $this->connect = $connect;
         }
     }
+
+    // $connection = new ConData();
+    // $connection->connection_database();
 ?>
