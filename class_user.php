@@ -17,12 +17,12 @@
             return $this->password;
         }
 
-        public function select() {
+        public function select($index) {
             $db = ConData::connection_database();
             $sql = "SELECT * FROM users";
             $users = $db->query($sql);
-            $result = $users->fetchAll();
-            return $result;
+            $result = $users->fetch();
+            return $result[$index];
         }
 
         public function insert($em , $na , $pas) {
@@ -30,10 +30,17 @@
             $sql = "INSERT INTO users VALUES(NULL , '$na' , '$em' ,'$pas')";
             $users = $db->query($sql);
         }
+
+        public function delete($id) {
+            $db = ConData::connection_database();
+            $sql = "DELETE FROM users WHERE id=$id";
+            $users = $db->query($sql);
+        }
     }
 
 
     $users = new User();
-    // $users->insert("a" , "z@gmail.com" , "0000");
-    var_dump($users->select());
+    echo $users->select("email");   //Afichage
+    // $users->insert("a" , "z@gmail.com" , "0000");     //Insert
+    // $users->delete("6");   //Delete
 ?>
