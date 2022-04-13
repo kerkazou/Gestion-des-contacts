@@ -26,7 +26,7 @@
             // ajout a new compts
         public function insert($em , $na , $pas) {
             $db = ConData::connection_database();
-            $sql = "INSERT INTO users VALUES(NULL , '$em' , '$na' ,'$pas')";
+            $sql = "INSERT INTO users VALUES(NULL , '$em' , '$na' ,'$pas' , sysdate())";
             $users = $db->query($sql);
         }
 
