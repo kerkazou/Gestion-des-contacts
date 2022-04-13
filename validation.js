@@ -6,24 +6,24 @@ const error_password = document.getElementById('error_password');
 const form_sign_in = document.getElementById('form_sign_in');
 const pattern_email = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
-form_sign_in.addEventListener('submit', (e) => {
+form_sign_in.addEventListener('submit', (e)=> {
     if(email_sign_in.value == ""){
-        e.preventDefault;
+        e.preventDefault();
         error_email.innerText = "Pls, fill in the email field.";
     }
     else if(pattern_email.test(email_sign_in.value)){
         error_email.innerText = "";
     }else if(!pattern_email.test(email_sign_in.value)){
-        e.preventDefault;
+        e.preventDefault();
         error_email.innerText = "The email is invalid.";
     } 
 
     if(password_sign_in.value == ""){
-        e.preventDefault;
+        e.preventDefault();
         error_password.innerText = "Pls, fill in the password field.";
     }
     else if(password_sign_in.value.length < 6){
-        e.preventDefault;
+        e.preventDefault();
         error_password.innerText = "Password must be at least six characters.";
     }else if(password_sign_in.value.length >= 6){
         error_password.innerText = "";

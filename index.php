@@ -68,7 +68,7 @@
                             <label for="checked" class="text-secondary">keep me signed in on this device</label>
                             <a class="btn btn-link float-end" style="color: #00C1FE;">Forget password?</a>
                         </div>
-                        <button type="submit" name="sign_in" id="validation_sign_in" class="btn btn-outline-secondary w-50 my-4 mx-auto" onclick="validation_sign_in()">SIN IN</button>
+                        <button type="submit" name="sign_in" class="btn btn-outline-secondary w-50 my-4 mx-auto" onclick="validation_sign_in()">SIN IN</button>
                     </form>
                 </div>
                         <!---------------------- Sign Up ---------------------->
@@ -88,7 +88,7 @@
                         <label class="d-block text-secondary">Confirm password</label>
                         <input type="password" name="conf_password" id="conf_password_sign_up" placeholder="Confirm your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
                         <p class="text-danger me-2" id="error_conf_password_sign_up"></p>
-                        <input type="submit" name="sign_up" id="validation_sign_up" class="btn btn-outline-secondary w-50 mt-3 mb-1 mx-auto">
+                        <input type="submit" name="sign_up" class="btn btn-outline-secondary w-50 mt-3 mb-1 mx-auto">
                     </form>
                 </div>
             </div>

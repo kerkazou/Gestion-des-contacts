@@ -12,7 +12,8 @@
 
         if(($username != NULL) && (preg_match($pattern_username,$username)) && ($email != NULL) && (preg_match($pattern_email,$email)) && ($pass != NULL) && ($conf_pass != NULL) && ($pass == $conf_pass)){
             if($users->user_existed($email)){
-                echo "<h1>This user is a relly exated</h1>";
+                echo '<h1>This user is a relly exated</h1>';
+                // header("location:index.php?errour=This user is a relly exated");
             }else{
                 $users->insert($username , $email , $pass);
                 header("location:contacts.html");

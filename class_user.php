@@ -14,6 +14,8 @@
         // }
 
 
+        // Sign up
+
             // test sur le compts est exixte 
         public function user_existed($email) {
             $db = ConData::connection_database();
@@ -30,8 +32,14 @@
             $users = $db->query($sql);
         }
 
-
-
+        // Sign in
+        public function login($email , $password) {
+            $db = ConData::connection_database();
+            $sql = "SELECT * FROM users WHERE email = '$email' AND pass = '$password'";
+            $users = $db->query($sql);
+            $result = $users->fetch();
+            return $result;
+        }
 
 
 
@@ -58,6 +66,9 @@
 
 
     $users = new User();
+
+    // var_dump($users->login("zakaria@gmail.com" , "96e79218965eb72c92a549dd5a330112"));
+    
     // echo $users->select("1" , "email");   //Afichage
     // $users->insert("a" , "z@gmail.com" , "0000");     //Insert
     // $users->delete("6");   //Delete
