@@ -56,7 +56,7 @@
                 <div class="card-body" id="sign_in">
                     <h3 class="text-center mt-4">SIGN IN</h3>
                     <p class="text-center text-secondary">Enter your credentials to access your account</p>
-                    <form class="d-flex flex-column" method="POST">
+                    <form class="d-flex flex-column" id="form_sign_in" method="POST" action="sign_in.php">
                         <label class="d-block mt-4 text-secondary">Email</label>
                         <input type="text" name="email" id="email_sign_in" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                         <p class="text-danger me-2" id="error_email"></p>
@@ -68,14 +68,14 @@
                             <label for="checked" class="text-secondary">keep me signed in on this device</label>
                             <a class="btn btn-link float-end" style="color: #00C1FE;">Forget password?</a>
                         </div>
-                        <button type="button" name="sign_in" id="validation_sign_in" class="btn btn-outline-secondary w-50 my-4 mx-auto" onclick="validation_sign_in()">SIN IN</button>
+                        <button type="submit" name="sign_in" id="validation_sign_in" class="btn btn-outline-secondary w-50 my-4 mx-auto" onclick="validation_sign_in()">SIN IN</button>
                     </form>
                 </div>
                         <!---------------------- Sign Up ---------------------->
                 <div class="card-body" id="sign_up">
                     <h3 class="text-center mt-2">SIGN UP</h3>
                     <p class="text-center text-secondary">Please fill out the form below to create your account!</p>
-                    <form class="d-flex flex-column" method="POST" action="sign_up.php">
+                    <form class="d-flex flex-column" id="form_sign_up" method="POST" action="sign_up.php">
                         <label class="d-block mt-3 text-secondary">Username</label>
                         <input type="text" name="username" id="username_sign_up" placeholder="Enter your username" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                         <p class="text-danger me-2" id="error_username"></p>
@@ -88,7 +88,7 @@
                         <label class="d-block text-secondary">Confirm password</label>
                         <input type="password" name="conf_password" id="conf_password_sign_up" placeholder="Confirm your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
                         <p class="text-danger me-2" id="error_conf_password_sign_up"></p>
-                        <button type="button" name="sign_up" id="validation_sign_up" class="btn btn-outline-secondary w-50 mt-3 mb-1 mx-auto">SIN UP</button>
+                        <input type="submit" name="sign_up" id="validation_sign_up" class="btn btn-outline-secondary w-50 mt-3 mb-1 mx-auto">
                     </form>
                 </div>
             </div>

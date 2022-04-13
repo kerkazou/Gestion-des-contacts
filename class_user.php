@@ -14,9 +14,26 @@
         // }
 
 
-        public $em;
-        public $na;
-        public $pas;
+            // test sur le compts est exixte 
+        public function user_existed($email) {
+            $db = ConData::connection_database();
+            $sql = "SELECT * FROM users WHERE email = '$email'";
+            $users = $db->query($sql);
+            $result = $users->fetch();
+            return $result;
+        }
+
+            // ajout a new compts
+        public function insert($em , $na , $pas) {
+            $db = ConData::connection_database();
+            $sql = "INSERT INTO users VALUES(NULL , '$em' , '$na' ,'$pas')";
+            $users = $db->query($sql);
+        }
+
+
+
+
+
 
         public function select($id , $index) {
             $db = ConData::connection_database();
@@ -24,12 +41,6 @@
             $users = $db->query($sql);
             $result = $users->fetch();
             return $result[$index];
-        }
-
-        public function insert($em , $na , $pas) {
-            $db = ConData::connection_database();
-            $sql = "INSERT INTO users VALUES(NULL , '$na' , '$em' ,'$pas')";
-            $users = $db->query($sql);
         }
 
         public function delete($id) {
