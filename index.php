@@ -25,8 +25,8 @@
                 </ul>
                 <form class="col-3 d-flex justify-content-evenly">
                     <input class="form-control me-3 d-none" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary me-3 nav_sign_in" type="button">Sign In</button>
-                    <button class="btn btn-outline-secondary me-3 nav_sign_up" type="button">Sign Up</button>
+                    <a href="#signin" class="btn btn-outline-secondary me-3 nav_sign_in" type="button">Sign In</a>
+                    <a href="#signup" class="btn btn-outline-secondary me-3 nav_sign_up" type="button">Sign Up</a>
                 </form>
             </div>
         </div>
@@ -55,7 +55,19 @@
                         <!---------------------- Sign In ---------------------->
                 <div class="card-body" id="sign_in">
                     <h3 class="text-center mt-4">SIGN IN</h3>
-                    <p class="text-center text-secondary">Enter your credentials to access your account</p>
+                    <?php
+                        // if(isset($_GET['error'])){
+                        //     echo '
+                        //         <div class="alert alert-danger d-flex align-items-center p-1" role="alert">
+                        //             <h2 class="bi bi-exclamation-triangle flex-shrink-0 mx-3" width="24" height="24"></h2>
+                        //             <div>Your email or password is incorrect, <br>Enter your credentials to access your account</div>
+                        //         </div>
+                        //     ';
+                        // }else{
+                        //     echo'<p class="text-center text-secondary">Enter your credentials to access your account</p>';
+                        // }
+                    ?>
+                    <p class="text-center text-secondary" id="errore">Enter your credentials to access your account</p>
                     <form class="d-flex flex-column" id="form_sign_in" method="POST" action="sign_in.php">
                         <label class="d-block mt-4 text-secondary">Email</label>
                         <input type="text" name="email" id="email_sign_in" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
@@ -99,3 +111,23 @@
 
 <script src="index.js"></script>
 <script src="validation.js"></script>
+
+
+<script>
+    console.log(window.location.hash);
+    if(window.location.hash == '#signin'){
+        nav_sign_in.click();
+    }
+    if(window.location.hash == '#signup'){
+        nav_sign_up.click();
+    }
+    if(window.location.hash == '#signin?errore'){
+        nav_sign_in.click();
+        document.getElementById('errore').innerHTML = `
+                        <div class="alert alert-danger d-flex align-items-center p-1" role="alert">
+                            <h2 class="bi bi-exclamation-triangle flex-shrink-0 mx-3" width="24" height="24"></h2>
+                            <div>Your email or password is incorrect, <br>Enter your credentials to access your account</div>
+                        </div>
+                        `;
+    }
+</script>

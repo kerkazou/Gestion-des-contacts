@@ -8,15 +8,25 @@
         $user = $users->login($email , $pass);
         if($user){
             session_start();
-            $_SESSION['last_login'] = date("Y-m-d H:i:s");;
-            $_SESSION['email'] = $user['email'];  
+            $_SESSION['last_login'] = date("Y-m-d H:i:s");
+            $_SESSION['email'] = $user['email'];
             $_SESSION['password'] = $user['pass'];
             $_SESSION['username'] = $user['usename'];
             $_SESSION['id'] = $user['id'];
-            echo $_SESSION['last_login'];
-            echo "<br>";
-            // $_SESSION['timeout'] = time();
 
+            $_SESSION['timeout'] = time();
+            if (time() - $_SESSION['timeout'] > 60) {
+                header("location:contacts.php");
+            }
+
+            header("location:contacts.php");
+
+            
+            // if (!isset($_SESSION['timeout'])) {
+            //     $_SESSION['timeout'] = time();
+            // }
+
+            // echo "<br>";
             // if (!isset($_SESSION['timeout'])) {
             //     $_SESSION['timeout'] = time();
             // } else if (time() - $_SESSION['timeout'] > 100) {
@@ -24,7 +34,8 @@
             // }
 
         }else{
-            echo "<h1>Your email or password is incorrect</h1>";
+            header("location:index.php#signin?errore");
+            // echo "<h1>Your email or password is incorrect</h1>";
         }
 
         //     setcookie('email' , $_SESSION['email'] , time() + 60*60 , null , null , false , true);
@@ -42,5 +53,5 @@
         // echo "<br>";
         // echo $pass;
     }else{
-        echo "no";
+        header("location:index.php");
     }
