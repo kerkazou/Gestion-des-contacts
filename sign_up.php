@@ -16,7 +16,7 @@
                 // header("location:index.php?errour=This user is a relly exated");
             }else{
                 $users->insert($username , $email , $pass);
-                header("location:contacts.html");
+                header("location:contacts.php");
             }
         }else{
             echo "no";

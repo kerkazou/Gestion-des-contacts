@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -48,28 +49,17 @@
             <div class="card">
                 <div>
                     <ul class="nav nav-tabs">
-                        <li class="nav-item col-6"><button type="button" class="nav-link tm-nav-link-border-right w-100 text-center active" id="btn_sign_in">Sign In</button></li>
-                        <li class="nav-item col-6"><button type="button" class="nav-link tm-no-border-right w-100 text-center" id="btn_sign_up">Sign Up</button></li>
+                        <li class="nav-item col-6"><a href="#signin" type="button" class="nav-link tm-nav-link-border-right w-100 text-center active" id="btn_sign_in">Sign In</a></li>
+                        <li class="nav-item col-6"><a href="#signup" type="button" class="nav-link tm-no-border-right w-100 text-center" id="btn_sign_up">Sign Up</a></li>
                     </ul>
                 </div>
                         <!---------------------- Sign In ---------------------->
                 <div class="card-body" id="sign_in">
                     <h3 class="text-center mt-4">SIGN IN</h3>
-                    <?php
-                        // if(isset($_GET['error'])){
-                        //     echo '
-                        //         <div class="alert alert-danger d-flex align-items-center p-1" role="alert">
-                        //             <h2 class="bi bi-exclamation-triangle flex-shrink-0 mx-3" width="24" height="24"></h2>
-                        //             <div>Your email or password is incorrect, <br>Enter your credentials to access your account</div>
-                        //         </div>
-                        //     ';
-                        // }else{
-                        //     echo'<p class="text-center text-secondary">Enter your credentials to access your account</p>';
-                        // }
-                    ?>
-                    <p class="text-center text-secondary" id="errore">Enter your credentials to access your account</p>
+                    <p class="text-center text-secondary">Enter your credentials to access your account</p>
+                    <p id="errore"></p>
                     <form class="d-flex flex-column" id="form_sign_in" method="POST" action="sign_in.php">
-                        <label class="d-block mt-4 text-secondary">Email</label>
+                        <label class="d-block mt-2 text-secondary">Email</label>
                         <input type="text" name="email" id="email_sign_in" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                         <p class="text-danger me-2" id="error_email"></p>
                         <label class="d-block text-secondary">Password</label>
@@ -124,9 +114,12 @@
     if(window.location.hash == '#signin?errore'){
         nav_sign_in.click();
         document.getElementById('errore').innerHTML = `
-                        <div class="alert alert-danger d-flex align-items-center p-1" role="alert">
-                            <h2 class="bi bi-exclamation-triangle flex-shrink-0 mx-3" width="24" height="24"></h2>
-                            <div>Your email or password is incorrect, <br>Enter your credentials to access your account</div>
+                        <div class="alert alert-danger d-flex justify-content-between align-items-center px-4 py-2" role="alert">
+                            <div class="text-start">
+                                <i class="bi bi-exclamation-octagon h5 me-3"></i>
+                                Your email or password is incorrect.
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         `;
     }
