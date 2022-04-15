@@ -55,39 +55,17 @@
             return $result;
         }
 
-
         // Logout
         public function logout() {
             session_unset();
             session_destroy();
             header("location:index.php");
         }
-
-
-        // public function select($id , $index) {
-        //     $db = ConData::connection_database();
-        //     $sql = "SELECT * FROM users WHERE id=$id";
-        //     $users = $db->query($sql);
-        //     $result = $users->fetch();
-        //     return $result[$index];
-        // }
-
-        // public function delete($id) {
-        //     $db = ConData::connection_database();
-        //     $sql = "DELETE FROM users WHERE id=$id";
-        //     $users = $db->query($sql);
-        // }
-
-        // public function update($id , $na , $em , $pas) {
-        //     $db = ConData::connection_database();
-        //     $sql = "UPDATE users SET usename = '$na', email = '$em', pass = '$pas' WHERE id=$id";
-        //     $users = $db->query($sql);
-        // }
     }
-
 
     $users = new User();
 
+    
     // var_dump($users->login("zakaria@gmail.com" , "96e79218965eb72c92a549dd5a330112"));
     
     // echo $users->select("1" , "email");   //Afichage

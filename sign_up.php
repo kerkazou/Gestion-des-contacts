@@ -15,7 +15,7 @@
                 header("location:index.php#signup?error_signup");
             }else{
                 $users->insert($username , $email , $pass);
-                header("location:contacts.php");
+                header("location:index.php#signin");
                 // fait la connection ici
             }
         }else{
@@ -26,12 +26,3 @@
     else{
         echo "You are not allowed to access this page, Pls return to the main page to fill out the forms.";
     }
-
-
-// echo $username ;
-// echo "<br>";
-// echo $email;
-// echo "<br>";
-// echo $pass;
-// echo "<br>";
-// echo $conf_pass;
