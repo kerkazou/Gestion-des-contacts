@@ -11,11 +11,14 @@
             $_SESSION['email'] = $user['email'];
             $_SESSION['password'] = $user['pass'];
             $_SESSION['username'] = $user['usename'];
+            $_SESSION['date_sign_up'] = $user['date_sign_up'];
             $_SESSION['id'] = $user['id'];
         }
             // temps pour clear session
         public function timeout() {
             if (time() - $_SESSION['timeout'] > 60) {
+                session_unset();
+                session_destroy();
                 header("location:index.php");
             }
         }
@@ -50,6 +53,14 @@
             $users = $db->query($sql);
             $result = $users->fetch();
             return $result;
+        }
+
+
+        // Logout
+        public function logout() {
+            session_unset();
+            session_destroy();
+            header("location:index.php");
         }
 
 

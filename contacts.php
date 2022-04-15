@@ -1,5 +1,6 @@
 <?php
     include "class_user.php";
+    session_start();
     $users->timeout();
 ?>
 
@@ -51,12 +52,12 @@
                     <div class="img_block">
                         <img class="card-img-top" src="USER/profil.jpg" alt="Your image">
                     </div>
-                    <div class="card-body">
-                        <h4 class="card-title text-center f-bold">Username</h4>
-                        <p class="text-start">Signup date:</p>
-                        <p class="text-start ">Last login:</p>
-                        <button class="btn btn-outline-secondary" type="button" style="width: 40%;">Logout</button>
-                  </div>
+                    <form class="card-body" action="logout.php">
+                        <h4 class="card-title text-center f-bold"><?php echo $_SESSION['username'] ?></h4>
+                        <p class="text-start">Signup date: <?php echo $_SESSION['date_sign_up'] ?></p>
+                        <p class="text-start ">Last login: <?php echo $_SESSION['last_login'] ?></p>
+                        <button class="btn btn-outline-secondary" name="logout" type="submit" style="width: 40%;">Logout</button>
+                  </form>
                 </div>
             </div>
         </div>
