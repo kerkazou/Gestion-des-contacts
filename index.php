@@ -17,7 +17,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand text-light" href="#">Contacts List</a>
+            <a class="navbar-brand text-light" href="index.php"><img src="SVG/logo1.png" alt="Logo" style="width: 40%;"></a>
             <div class="row collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="col-6 navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item d-none">
@@ -57,7 +57,7 @@
                 <div class="card-body" id="sign_in">
                     <h3 class="text-center mt-4">SIGN IN</h3>
                     <p class="text-center text-secondary">Enter your credentials to access your account</p>
-                    <p id="errore"></p>
+                    <p id="error_signin"></p>
                     <form class="d-flex flex-column" id="form_sign_in" method="POST" action="sign_in.php">
                         <label class="d-block mt-2 text-secondary">Email</label>
                         <input type="text" name="email" id="email_sign_in" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
@@ -77,6 +77,7 @@
                 <div class="card-body" id="sign_up">
                     <h3 class="text-center mt-2">SIGN UP</h3>
                     <p class="text-center text-secondary">Please fill out the form below to create your account!</p>
+                    <p id="error_signup"></p>
                     <form class="d-flex flex-column" id="form_sign_up" method="POST" action="sign_up.php">
                         <label class="d-block mt-3 text-secondary">Username</label>
                         <input type="text" name="username" id="username_sign_up" placeholder="Enter your username" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
@@ -111,13 +112,25 @@
     if(window.location.hash == '#signup'){
         nav_sign_up.click();
     }
-    if(window.location.hash == '#signin?errore'){
+    if(window.location.hash == '#signin?error_signin'){
         nav_sign_in.click();
-        document.getElementById('errore').innerHTML = `
+        document.getElementById('error_signin').innerHTML = `
                         <div class="alert alert-danger d-flex justify-content-between align-items-center px-4 py-2" role="alert">
                             <div class="text-start">
                                 <i class="bi bi-exclamation-octagon h5 me-3"></i>
                                 Your email or password is incorrect.
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        `;
+    }
+    if(window.location.hash == '#signup?error_signup'){
+        nav_sign_up.click();
+        document.getElementById('error_signup').innerHTML = `
+                        <div class="alert alert-danger d-flex justify-content-between align-items-center px-4 py-2" role="alert">
+                            <div class="text-start">
+                                <i class="bi bi-exclamation-octagon h5 me-3"></i>
+                                This user is a relly exated.
                             </div>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
