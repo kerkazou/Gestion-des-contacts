@@ -52,11 +52,11 @@
                     <div class="img_block">
                         <img class="card-img-top" src="USER/profil.jpg" alt="Your image">
                     </div>
-                    <form class="card-body" action="logout.php">
-                        <h4 class="card-title text-center f-bold"><?php echo $_SESSION['username'] ?></h4>
-                        <p class="text-start">Signup date: <?php echo $_SESSION['date_sign_up'] ?></p>
-                        <p class="text-start ">Last login: <?php echo $_SESSION['last_login'] ?></p>
-                        <button class="btn btn-outline-secondary" name="logout" type="submit" style="width: 40%;">Logout</button>
+                    <form class="card-body gap-5" action="logout.php">
+                        <h4 class="card-title text-center f-bold mb-4"><?php echo $_SESSION['username'] ?></h4>
+                        <p class="text-start ms-3">Signup date: <?php echo $_SESSION['date_sign_up'] ?></p>
+                        <p class="text-start ms-3">Last login: <?php echo $_SESSION['last_login'] ?></p>
+                        <button class="btn btn-outline-secondary mt-4" name="logout" type="submit" style="width: 40%;">Logout</button>
                   </form>
                 </div>
             </div>
@@ -75,62 +75,33 @@
 
         <!-- Afichage des contactes -->
         <div class="d-flex justify-content-center flex-wrap gap-5">
-            <div class="d-flex align-items-center gap-2">
-                <div class="d-sm-flex user">
-                    <div class="image">
-                        <img src="USER/profil.jpg" alt="Contact1">
-                    </div>
-                    <div class="details">
-                        <h3>User 1</h3>
-                        <p><i class="bi bi-telephone me-2"></i>06.00.00.00.00</p>
-                        <p><i class="bi bi-envelope me-2"></i>User1@gmail.com</p>
-                        <p><i class="bi bi-geo-alt me-2"></i>Adress</p>
-                    </div>
-                </div>
-                <div class="nav_user">
-                    <span><i class="bi bi-pencil-square"></i></span>
-                    <span></span>
-                    <span><i class="bi bi-trash"></i></span>
-                </div>
-            </div>
+            <?php 
+                // include 'class_contact.php';
+                // while ($af_contact = $contact->selectAsc($_SESSION['id'])){
+            ?>
 
-            <div class="d-flex align-items-center gap-2">
-                <div class="d-sm-flex user">
-                    <div class="image">
-                        <img src="USER/profil.jpg" alt="Contact1">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="d-sm-flex user">
+                        <div class="image">
+                            <img src="USER/profil.jpg" alt="Contact1">
+                        </div>
+                        <div class="details">
+                            <h3><?php // echo $af_contact['username'] ?></h3>
+                            <p><i class="bi bi-telephone me-2"></i><?php // echo $af_contact['phone'] ?></p>
+                            <p><i class="bi bi-envelope me-2"></i><?php // echo $af_contact['email'] ?></p>
+                            <p><i class="bi bi-geo-alt me-2"></i><?php // echo $af_contact['adress'] ?></p>
+                        </div>
                     </div>
-                    <div class="details">
-                        <h3>User 2</h3>
-                        <p><i class="bi bi-telephone me-2"></i>06.22.22.22.22</p>
-                        <p><i class="bi bi-envelope me-2"></i>User2@gmail.com</p>
-                        <p><i class="bi bi-geo-alt me-2"></i>Adress</p>
-                    </div>
-                </div>
-                <div class="nav_user">
-                    <span><i class="bi bi-pencil-square"></i></span>
-                    <span></span>
-                    <span><i class="bi bi-trash"></i></span>
-                </div>
-            </div>
-
-            <div class="d-flex align-items-center gap-2">
-                <div class="d-sm-flex user">
-                    <div class="image">
-                        <img src="USER/profil.jpg" alt="Contact1">
-                    </div>
-                    <div class="details">
-                        <h3>User 3</h3>
-                        <p><i class="bi bi-telephone me-2"></i>06.33.33.33.33</p>
-                        <p><i class="bi bi-envelope me-2"></i>User3@gmail.com</p>
-                        <p><i class="bi bi-geo-alt me-2"></i>Adress Adress Adress Adress</p>
+                    <div class="nav_user">
+                        <span><i class="bi bi-pencil-square"></i></span>
+                        <span></span>
+                        <span><i class="bi bi-trash"></i></span>
                     </div>
                 </div>
-                <div class="nav_user">
-                    <span><i class="bi bi-pencil-square"></i></span>
-                    <span></span>
-                    <span><i class="bi bi-trash"></i></span>
-                </div>
-            </div>
+            
+            <?php
+                // }
+            ?>
         </div>
     </div>
 

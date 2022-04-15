@@ -3,10 +3,18 @@
 
     class Contact {
 
-        // affichage contact
-        public function select($id) {
+        // affichage contact ASC (A-Z)
+        public function selectAsc($id) {
             $db = ConData::connection_database();
-            $sql = "SELECT * FROM contacts WHERE id=$id";
+            $sql = "SELECT * FROM contacts ORDER BY users.username ASC WHERE id=$id";
+            $contacts = $db->query($sql);
+            $result = $contacts->fetchAll();
+            return $result;
+        }
+        // affichage contact DESC (Z-A)
+        public function selectDesc($id) {
+            $db = ConData::connection_database();
+            $sql = "SELECT * FROM contacts ORDER BY users.username DESC WHERE id=$id";
             $contacts = $db->query($sql);
             $result = $contacts->fetchAll();
             return $result;
