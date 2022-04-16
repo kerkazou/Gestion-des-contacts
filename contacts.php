@@ -1,5 +1,6 @@
 <?php
     include "class_user.php";
+    include 'class_contact.php';
     session_start();
     $users->timeout();
 ?>
@@ -76,8 +77,7 @@
         <!-- Afichage des contactes -->
         <div class="d-flex justify-content-center flex-wrap gap-5">
             <?php 
-                // include 'class_contact.php';
-                // while ($af_contact = $contact->selectAsc($_SESSION['id'])){
+                while ($af_contact = $contact->selectAsc($_SESSION['id'])){
             ?>
 
                 <div class="d-flex align-items-center gap-2">
@@ -100,7 +100,7 @@
                 </div>
             
             <?php
-                // }
+                }
             ?>
         </div>
     </div>
