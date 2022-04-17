@@ -3,6 +3,14 @@
 
     class Contact {
 
+        public function select($id) {
+            $db = ConData::connection_database();
+            $sql = "SELECT * FROM contacts WHERE id=$id";
+            $contacts = $db->query($sql);
+            $result = $contacts->fetchAll();
+            return $result;
+        }
+
         // affichage contact ASC (A-Z)
         public function selectAsc($id) {
             $db = ConData::connection_database();
@@ -42,3 +50,4 @@
         }
     }
     $contact = new Contact();
+    // var_dump($contact->select(18));
