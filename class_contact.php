@@ -16,25 +16,22 @@
 
         
         // ajout contact
-        // public function insert($username , $phone , $email , $adress , $id) {
-        //     $db = ConData::connection_database();
-        //     $sql = "INSERT INTO contacts VALUES(NULL , '$username' , '$email' ,'$phone' , '$adress' , '$id')";
-        //     $contacts = $db->query($sql);
-        // }
+        public static function insert($username , $phone , $email , $adress , $id) {
+            $result = ConData::query("INSERT INTO contacts VALUES(NULL , '$username' , '$email' ,'$phone' , '$adress' , '$id')");
+            return $result;
+        }
 
         // update contact
-        // public function update($username , $phone , $email , $adress , $idc) {
-        //     $db = ConData::connection_database();
-        //     $sql = "UPDATE contacts SET username = '$username', email = '$email', phone = '$phone', adress = '$adress' WHERE idc=$idc";
-        //     $contacts = $db->query($sql);
-        // }
+        public static function update($username , $phone , $email , $adress , $idc) {
+            $result = ConData::query("UPDATE contacts SET username = '$username', email = '$email', phone = '$phone', adress = '$adress' WHERE idc=$idc");
+            return $result;
+        }
 
         // dalete contact
-        // public function delete($idc) {
-        //     $db = ConData::connection_database();
-        //     $sql = "DELETE FROM contacts WHERE idc=$idc";
-        //     $contacts = $db->query($sql);
-        // }
+        public static function delete($idc) {
+            $result = ConData::query("DELETE FROM contacts WHERE idc=$idc");
+            return $result;
+        }
     }
     // $contact = new Contact();
 

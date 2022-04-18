@@ -86,8 +86,8 @@
                             <img src="USER/profil.jpg" alt="Contact1">
                         </div>
                         <div class="details">
+                            <h3 class="id"><?php echo $contact['idc'] ?></h3>
                             <h3 class="username"><?php echo $contact['username'] ?></h3>
-                            <h3 class="d-none id"><?php echo $contact['idc'] ?></h3>
                             <p><i class="bi bi-telephone me-2 "></i><span class="phone"><?php echo $contact['phone'] ?></span></p>
                             <p><i class="bi bi-envelope me-2 "></i><span class="email"><?php echo $contact['email'] ?></span></p>
                             <p><i class="bi bi-geo-alt me-2 "></i><span class="adress"><?php echo $contact['adress'] ?></span></p>
@@ -96,7 +96,7 @@
                     <div class="nav_user">
                         <span><i class="bi bi-pencil-square btn-edit" data-bs-toggle="modal" data-bs-target="#editModal"></i></span>
                         <span></span>
-                        <span><i class="bi bi-trash"></i></span>
+                        <span><i class="bi bi-trash btn-delet" data-bs-toggle="modal" data-bs-target="#deletModal"></i></span>
                     </div>
                 </div>
             <?php
@@ -113,75 +113,104 @@
                 <h4 class="modal-title text-light" id="staticBackdropLabel">Add Contact</h4>
                 <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form method="POST" class="container" action="">
+                <form class="container" method="POST" action="add_contact.php">
+                    <div class="modal-body">
                         <div class="form-floating mb-3">
-                            <input class="form-control mb-3" name="name" type="text" required id="floatingInput" placeholder="name@example.com">
+                            <input class="form-control mb-3" name="username" type="text" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Username</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control mb-3" name="Phone"type="text" required id="floatingInput" placeholder="name@example.com">
+                            <input class="form-control mb-3" name="phone"type="text" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Phone</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control mb-3" name="email" type="text" required id="floatingInput" placeholder="name@example.com">
+                            <input class="form-control mb-3" name="email" type="text" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Adress email</label>
                         </div>
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <textarea class="form-control" name="adress" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                             <label for="floatingTextarea2">Adress...</label>
-                          </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-outline-secondary me-3" id="add_new_contact" name="add" type="submit">Submit</button>
-                </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <input class="btn btn-outline-secondary" type="submit" name="add_contact" value="Submit">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
     <!-- Modal Edite contacts -->
     <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark">
-                    <h4 class="modal-title text-light" id="staticBackdropLabel">Edit Contact</h4>
-                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" class="container" action="update.php">
-                        <input class="form-control mb-3 id" name="id" type="hidden">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                <h4 class="modal-title text-light" id="staticBackdropLabel">Edit Contact</h4>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <form method="POST" class="container" action="edite_contact.php">
+                        <div class="modal-body">
+                            <input class="form-control mb-3 id" name="idc" type="hidden">
                             <div class="form-floating mb-3">
-                                <input class="form-control mb-3 username" name="name" type="text" required id="floatingInput" placeholder="name@example.com">
+                                <input class="form-control mb-3 username" name="username_e" type="text" required id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Username</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control mb-3 phone"  name="Phone"type="text" required id="floatingInput" placeholder="name@example.com">
+                                <input class="form-control mb-3 phone"  name="phone_e"type="text" required id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Phone</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control mb-3 email"  name="email" type="text" required id="floatingInput" placeholder="name@example.com">
+                                <input class="form-control mb-3 email"  name="email_e" type="text" required id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Adress email</label>
                             </div>
                             <div class="form-floating">
-                                <textarea class="form-control adress"  placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <textarea class="form-control adress" name="adress_e" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Adress...</label>
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <button class="btn btn-outline-secondary me-3" id="add_new_contact" name="add" type="submit">Submit</button>
-                    </div>
-                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                            <input class="btn btn-outline-secondary" type="submit" name="edite_contact" value="Submit">
+                        </div>
+                    </form>
             </div>
         </div>
+    </div>
+
+    <!-- Modal Delete contacts -->
+    <div class="modal fade" id="deletModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                <h4 class="modal-title text-light" id="staticBackdropLabel">Delete Contact</h4>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <form method="POST" class="container" action="delete_contact.php">
+                        <div class="modal-body">
+                            <h5 class="text-danger text-center my-3">Are you really you want to delete this contact?</h5>
+                            <input class="form-control mb-2 id" name="idc" type="hidden">
+                            <label>Username</label>
+                            <input class="form-control mb-2 username" name="username" type="text" disabled>
+                            <label>Phone</label>
+                            <input class="form-control mb-2 phone"  name="phone"type="text" disabled>
+                            <label>Email</label>
+                            <input class="form-control mb-2 email"  name="email" type="text" disabled>
+                            <label>Adress</label>
+                            <input class="form-control adress" name="adress" disabled>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                            <input class="btn btn-outline-secondary" type="submit" name="delete_contact" value="Delete">
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
 
 <script src="contacts.js"></script>
-
-<script src='update.js'>
-</script>
+<script src='update.js'></script>
+<!-- <script src="parsley.min.js"></script> -->
