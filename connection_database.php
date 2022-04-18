@@ -11,5 +11,15 @@
             }
             return $connect;
         }
+
+        public static function query($sql) {
+            $db = ConData::connection_database();
+            $result = $db->query($sql);
+            if($result){
+                if(stripos($sql,'SELECT')!==false){
+                    return $result->fetchAll();
+                }
+            }
+        }
     }
 ?>

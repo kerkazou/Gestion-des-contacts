@@ -1,5 +1,5 @@
 <?php
-    include "class_user.php";
+    require_once "class_user.php";
     session_start();
     $users->timeout();
 ?>
@@ -75,9 +75,10 @@
 
         <!-- Afichage des contactes -->
         <div class="d-flex justify-content-center flex-wrap gap-5">
-            <?php 
-                // include 'class_contact.php';
-                // while($contact->select($_SESSION['id'])){
+            <?php
+                include 'class_contact.php';
+                $af_contact = Contact::selectAll($_SESSION['id']);
+                foreach($af_contact as $contact){
             ?>
                 <div class="d-flex align-items-center gap-2">
                     <div class="d-sm-flex user">
@@ -85,10 +86,10 @@
                             <img src="USER/profil.jpg" alt="Contact1">
                         </div>
                         <div class="details">
-                            <h3><?php // echo $contact['username'] ?></h3>
-                            <p><i class="bi bi-telephone me-2"></i><?php // echo $contact['phone'] ?></p>
-                            <p><i class="bi bi-envelope me-2"></i><?php // echo $contact['email'] ?></p>
-                            <p><i class="bi bi-geo-alt me-2"></i><?php // echo $contact['adress'] ?></p>
+                            <h3><?php echo $contact['username'] ?></h3>
+                            <p><i class="bi bi-telephone me-2"></i><?php echo $contact['phone'] ?></p>
+                            <p><i class="bi bi-envelope me-2"></i><?php echo $contact['email'] ?></p>
+                            <p><i class="bi bi-geo-alt me-2"></i><?php echo $contact['adress'] ?></p>
                         </div>
                     </div>
                     <div class="nav_user">
@@ -98,7 +99,7 @@
                     </div>
                 </div>
             <?php
-                // }
+                }
             ?>
         </div>
     </div>

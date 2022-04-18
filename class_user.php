@@ -1,5 +1,5 @@
 <?php
-    include "connection_database.php";
+    require_once "connection_database.php";
 
     class User {
         // Session
