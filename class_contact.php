@@ -3,27 +3,17 @@
 
     class Contact {
 
-        public static function selectAll($id) {
-            $result = ConData::query("SELECT * FROM contacts WHERE id=$id");
+        // affichage contact ASC (A-Z)
+        public static function selectAsc($id) {
+            $result = ConData::query("SELECT * FROM contacts WHERE id=$id ORDER BY username ASC");
+            return $result;
+        }
+        // affichage contact DESC (Z-A)
+        public static function selectDesc($id) {
+            $result = ConData::query("SELECT * FROM contacts WHERE id=$id ORDER BY username DESC");
             return $result;
         }
 
-        // affichage contact ASC (A-Z)
-        // public function selectAsc($id) {
-        //     $db = ConData::connection_database();
-        //     $sql = "SELECT * FROM contacts ORDER BY username ASC WHERE id=$id";
-        //     $contacts = $db->query($sql);
-        //     $result = $contacts->fetchAll();
-        //     return $result;
-        // }
-        // affichage contact DESC (Z-A)
-        // public function selectDesc($id) {
-        //     $db = ConData::connection_database();
-        //     $sql = "SELECT * FROM contacts ORDER BY users.username DESC WHERE id=$id";
-        //     $contacts = $db->query($sql);
-        //     $result = $contacts->fetchAll();
-        //     return $result;
-        // }
         
         // ajout contact
         // public function insert($username , $phone , $email , $adress , $id) {
@@ -47,3 +37,5 @@
         // }
     }
     // $contact = new Contact();
+
+    // echo $_SERVER['REQUEST_URI'];

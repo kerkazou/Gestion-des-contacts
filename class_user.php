@@ -16,7 +16,7 @@
         }
             // temps pour clear session
         public function timeout() {
-            if (time() - $_SESSION['timeout'] > 60) {
+            if (time() - $_SESSION['timeout'] > 60*5) {
                 session_unset();
                 session_destroy();
                 header("location:index.php");
