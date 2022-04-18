@@ -30,7 +30,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            <form class="d-flex gap-3">
+            <form class="d-flex justify-content-center gap-3">
                 <div class="btn-group border align-items-center" style="border-radius: 8px;">
                     <input class="border-0 bg-dark ms-2" type="recheche" placeholder="Search...">
                     <button class="btn" type="button"><i class="bi bi-search text-secondary"></i></button>
@@ -65,7 +65,7 @@
         <!-- Navbar de la liste -->
         <div class="d-sm-flex justify-content-between align-items-center py-2 px-5">
             <h4 class="text-secondary">Contacts Lists</h2>
-            <div>
+            <div class="d-flex justify-content-between">
                 <i class="bi bi-sort-alpha-up btn text-secondary border-0" style="font-size: 25px;"></i><!-- bi-sort-alpha-down-alt -->
                 <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ADD NEW CONTACTS</button>
             </div>
@@ -81,12 +81,12 @@
                 foreach($af_contact as $contact){
             ?>
                 <div class="d-flex align-items-center gap-2 contact">
-                    <div class="d-sm-flex user">
+                    <div class="d-flex user">
                         <div class="image">
                             <img src="USER/profil.jpg" alt="Contact1">
                         </div>
                         <div class="details">
-                            <h3 class="id"><?php echo $contact['idc'] ?></h3>
+                            <h3 class="d-none id"><?php echo $contact['idc'] ?></h3>
                             <h3 class="username"><?php echo $contact['username'] ?></h3>
                             <p><i class="bi bi-telephone me-2 "></i><span class="phone"><?php echo $contact['phone'] ?></span></p>
                             <p><i class="bi bi-envelope me-2 "></i><span class="email"><?php echo $contact['email'] ?></span></p>
@@ -192,12 +192,6 @@
                             <input class="form-control mb-2 id" name="idc" type="hidden">
                             <label>Username</label>
                             <input class="form-control mb-2 username" name="username" type="text" disabled>
-                            <label>Phone</label>
-                            <input class="form-control mb-2 phone"  name="phone"type="text" disabled>
-                            <label>Email</label>
-                            <input class="form-control mb-2 email"  name="email" type="text" disabled>
-                            <label>Adress</label>
-                            <input class="form-control adress" name="adress" disabled>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>

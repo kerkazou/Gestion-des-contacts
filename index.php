@@ -60,10 +60,10 @@
                     <p id="error_signin"></p>
                     <form class="d-flex flex-column" id="form_sign_in" method="POST" action="sign_in.php">
                         <label class="d-block mt-2 text-secondary">Email</label>
-                        <input type="text" name="email" id="email_sign_in" placeholder="Enter your email" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
+                        <input type="text" name="email" id="email_sign_in" placeholder="Enter your email" value="<?php if(isset($_COOKIE['email'])) echo $_COOKIE['email'] ?>" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 col-form-label">
                         <p class="text-danger me-2" id="error_email"></p>
                         <label class="d-block text-secondary">Password</label>
-                        <input type="password" name="password" id="password_sign_in" placeholder="Enter your password" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
+                        <input type="password" name="password" id="password_sign_in" placeholder="Enter your password" value="<?php if(isset($_COOKIE['password'])) echo $_COOKIE['password'] ?>" class="w-100 ps-3 rounded-2 border border-gray-600 border-2 d-block col-form-label">
                         <p class="text-danger me-2" id="error_password"></p>
                         <div>
                             <input type="checkbox" class="mt-3 mx-1" name="checked" id="checked">
