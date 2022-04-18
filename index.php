@@ -14,18 +14,13 @@
     <!---------------------- NavBar ---------------------->
     <nav class="navbar navbar-expand-lg navbar-light bg-dark px-5">
         <div class="container-fluid">
+            <a class="navbar-brand text-light" href="index.php"><img src="SVG/logo1.png" alt="Logo" style="width: 40%;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand text-light" href="index.php"><img src="SVG/logo1.png" alt="Logo" style="width: 40%;"></a>
-            <div class="row collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="col-6 navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item d-none">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-                    </li>
-                </ul>
-                <form class="col-3 d-flex justify-content-evenly">
-                    <input class="form-control me-3 d-none" type="search" placeholder="Search" aria-label="Search">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                <form class="d-flex justify-content-center gap-3">
                     <a href="#signin" class="btn btn-outline-secondary me-3 nav_sign_in" type="button">Sign In</a>
                     <a href="#signup" class="btn btn-outline-secondary me-3 nav_sign_up" type="button">Sign Up</a>
                 </form>
