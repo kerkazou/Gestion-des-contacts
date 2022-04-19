@@ -1,6 +1,4 @@
 <?php
-    echo $_SERVER['HTTP_REFERER'];
-
     require_once "class_user.php";
     session_start();
     $users->timeout();
