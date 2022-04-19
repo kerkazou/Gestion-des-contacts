@@ -1,19 +1,24 @@
 <form id="form-search" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <span><span class="style2">Enter you email here</span>:</span>
     <input name="email" type="email" id="email" required/>
-    <input type="submit" value="subscribe" class="submit" onclick="return fun()" />
+    <input type="submit" name="submit" value="subscribe"/>
 </form>
 
-<script>
-      $(document).on('click','#save',function(e) {
-  var data = $("#form-search").serialize();
-  $.ajax({
-         data: data,
-         type: "post",
-         url: "insertmail.php",
-         success: function(data){
-              alert("Data Save: " + data);
-         }
-});
- });
-</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<?php
+    if(isset($_POST['submit'])){
+        echo "
+            <script>
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your registration is successful',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            </script>
+        ";
+    }
+    echo $_SERVER['REQUEST_URI'];
+?>

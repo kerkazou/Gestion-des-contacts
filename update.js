@@ -14,9 +14,5 @@ document.querySelectorAll('.btn-edit , .btn-delet').forEach(function(btn){
             document.querySelector('#editModal .adress').value=adress;
 
             document.querySelector('#deletModal .id').value=id;
-            document.querySelector('#deletModal .username').value=userName;
-            document.querySelector('#deletModal .email').value=email;
-            document.querySelector('#deletModal .phone').value=phone;
-            document.querySelector('#deletModal .adress').value=adress;
     })
 })

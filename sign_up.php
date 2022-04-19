@@ -15,8 +15,7 @@
                 header("location:index.php#signup?error_signup");
             }else{
                 $users->insert($username , $email , $pass);
-                header("location:index.php#signin");
-                // fait la connection ici
+                header("location:index.php#signin?successful");
             }
         }else{
             echo "Pls, fill the all field.";

@@ -23,6 +23,7 @@
 
         // update contact
         public static function update($username , $phone , $email , $adress , $idc) {
+            
             $result = ConData::query("UPDATE contacts SET username = '$username', email = '$email', phone = '$phone', adress = '$adress' WHERE idc=$idc");
             return $result;
         }

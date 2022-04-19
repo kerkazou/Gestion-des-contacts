@@ -30,17 +30,17 @@
 
     <!---------------------- Container ---------------------->
     <div class="d-md-flex lign-items-center overflow-hidden">
-        <div class="col-7" style="margin-top: 9%;">
-            <img src="svg/undraw_profile_re_4a55.svg" id="img_index" style="width: 80%; margin-left: 10%;">
+        <div class="col-md-6" style="margin-top: 9%;">
+            <img src="svg/undraw_profile_re_4a55.svg" id="img_index" style="width: 86%; margin-left: 7%;">
         </div>
                 <!---------------------- Text ---------------------->
-        <div class="col-5 align-items-center" id="text_index" style="margin-top: 15%; margin-left: 2%;">
+        <div class="col-md-6 align-items-center" id="text_index" style="margin: 15% 5%">
             <h1>Hello!</h1>
             <h4><a href="" class="text_sign_up">Sign up</a> to start creating your Contacts list.</h4>
             <h4>Already have an acount? <a href="" class="text_sign_in">Login here</a>.</h4>
         </div>
                 <!---------------------- Sign ---------------------->
-        <div class="mt-5 col-4" id="sign">
+        <div class="mt-5 col-sm-4 col-10 mx-auto mb-3" id="sign">
             <div class="card">
                 <div>
                     <ul class="nav nav-tabs">
@@ -97,6 +97,7 @@
 
 <script src="index.js"></script>
 <script src="validation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 <script>
@@ -120,6 +121,8 @@
                         `;
     }
     if(window.location.hash == '#signup?error_signup'){
+        let urlParts=window.location.href.split("?");
+        window.location.href=urlParts[0];
         nav_sign_up.click();
         document.getElementById('error_signup').innerHTML = `
                         <div class="alert alert-danger d-flex justify-content-between align-items-center px-4 py-2" role="alert">
@@ -130,5 +133,17 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         `;
+    }
+    if(window.location.hash == '#signin?successful'){
+        let urlParts=window.location.href.split("?");
+        window.location.href=urlParts[0];
+        nav_sign_in.click();
+        Swal.fire({
+            position: '',
+            icon: 'success',
+            title: 'Your registration is successful',
+            showConfirmButton: false,
+            timer: 3000
+        })
     }
 </script>

@@ -1,4 +1,6 @@
 <?php
+    echo $_SERVER['HTTP_REFERER'];
+
     require_once "class_user.php";
     session_start();
     $users->timeout();
@@ -74,7 +76,7 @@
         <hr style="width: 70%; margin-left: 15%; margin-top: 0px;">
 
         <!-- Afichage des contactes -->
-        <div class="d-flex justify-content-center flex-wrap gap-5">
+        <div class="d-flex justify-content-center flex-wrap gap-5 mb-5">
             <?php
                 include 'class_contact.php';
                 $af_contact = Contact::selectAsc($_SESSION['id']);
@@ -88,7 +90,7 @@
                         <div class="details">
                             <h3 class="d-none id"><?php echo $contact['idc'] ?></h3>
                             <h3 class="username"><?php echo $contact['username'] ?></h3>
-                            <p><i class="bi bi-telephone me-2 "></i><span class="phone"><?php echo $contact['phone'] ?></span></p>
+                            <p><i class="bi bi-telephone me-2 "></i><span class="phone"><?php echo  $contact['phone'] ?></span></p>
                             <p><i class="bi bi-envelope me-2 "></i><span class="email"><?php echo $contact['email'] ?></span></p>
                             <p><i class="bi bi-geo-alt me-2 "></i><span class="adress"><?php echo $contact['adress'] ?></span></p>
                         </div>
@@ -105,102 +107,8 @@
         </div>
     </div>
 
-    <!-- Modal Add contacts -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                <h4 class="modal-title text-light" id="staticBackdropLabel">Add Contact</h4>
-                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form class="container" method="POST" action="add_contact.php">
-                    <div class="modal-body">
-                        <div class="form-floating mb-3">
-                            <input class="form-control mb-3" name="username" type="text" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Username</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control mb-3" name="phone"type="text" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Phone</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control mb-3" name="email" type="text" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Adress email</label>
-                        </div>
-                        <div class="form-floating">
-                            <textarea class="form-control" name="adress" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                            <label for="floatingTextarea2">Adress...</label>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <input class="btn btn-outline-secondary" type="submit" name="add_contact" value="Submit">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Edite contacts -->
-    <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                <h4 class="modal-title text-light" id="staticBackdropLabel">Edit Contact</h4>
-                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                    <form method="POST" class="container" action="edite_contact.php">
-                        <div class="modal-body">
-                            <input class="form-control mb-3 id" name="idc" type="hidden">
-                            <div class="form-floating mb-3">
-                                <input class="form-control mb-3 username" name="username_e" type="text" required id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Username</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control mb-3 phone"  name="phone_e"type="text" required id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Phone</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control mb-3 email"  name="email_e" type="text" required id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Adress email</label>
-                            </div>
-                            <div class="form-floating">
-                                <textarea class="form-control adress" name="adress_e" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">Adress...</label>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                            <input class="btn btn-outline-secondary" type="submit" name="edite_contact" value="Submit">
-                        </div>
-                    </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Delete contacts -->
-    <div class="modal fade" id="deletModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                <h4 class="modal-title text-light" id="staticBackdropLabel">Delete Contact</h4>
-                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                    <form method="POST" class="container" action="delete_contact.php">
-                        <div class="modal-body">
-                            <h5 class="text-danger text-center my-3">Are you really you want to delete this contact?</h5>
-                            <input class="form-control mb-2 id" name="idc" type="hidden">
-                            <label>Username</label>
-                            <input class="form-control mb-2 username" name="username" type="text" disabled>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                            <input class="btn btn-outline-secondary" type="submit" name="delete_contact" value="Delete">
-                        </div>
-                    </form>
-            </div>
-        </div>
-    </div>
+    <!-- Modals -->
+    <?php require_once 'modals.php' ?>
 
 </body>
 </html>
