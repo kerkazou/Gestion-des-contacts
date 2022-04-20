@@ -65,12 +65,4 @@
     }
 
     $users = new User();
-
-    
-    // var_dump($users->login("zakaria@gmail.com" , "96e79218965eb72c92a549dd5a330112"));
-    
-    // echo $users->select("1" , "email");   //Afichage
-    // $users->insert("a" , "z@gmail.com" , "0000");     //Insert
-    // $users->delete("6");   //Delete
-    // $users->update("2" , "Zwaks" , "zwaks@gmail.com" , "0000");    //Update
 ?>
