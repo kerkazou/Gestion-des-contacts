@@ -83,7 +83,7 @@
                 <div class="d-flex align-items-center gap-2 contact">
                     <div class="d-flex user">
                         <div class="image">
-                            <img src="USER/profil.jpg" alt="Contact1">
+                            <img src="USER/<?=strtolower($contact['username'][0])?>.png" alt="Contact1">
                         </div>
                         <div class="details">
                             <h3 class="d-none id"><?php echo $contact['idc'] ?></h3>
@@ -119,6 +119,13 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<script>
+    string = document.querySelector(".username").innerHTML;
+
+    document.querySelector(".image").src = "USER/" + string.charAt(0) + ".png";
+</script>
 
 
 <script>
