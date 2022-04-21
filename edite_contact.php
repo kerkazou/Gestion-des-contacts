@@ -14,7 +14,7 @@
 
         if(($username != NULL) && (preg_match($pattern_username,$username)) && (strlen($phone) == 10) && ($email != NULL) && (preg_match($pattern_email,$email))){
             Contact::update($username , $phone , $email , $adress , $idc);
-                header("location:contacts.php");
+                header("location:contacts.php#edite");
         }else{
             echo "Pls, fill the all field.";
         }
