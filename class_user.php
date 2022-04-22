@@ -26,9 +26,9 @@
 
         // craet setcookie
         public function creat_setcookie($usernamec , $emailc , $passwordc) {
-            setcookie('username' , $usernamec , time() + 60*2 , null , null , false , true);
-            setcookie('email' , $emailc , time() + 60*2 , null , null , false , true);
-            setcookie('password' , $passwordc , time() + 60*2 , null , null , false , true);
+            setcookie('username' , $usernamec , time() + 60*60 , null , null , false , true);
+            setcookie('email' , $emailc , time() + 60*60 , null , null , false , true);
+            setcookie('password' , $passwordc , time() + 60*60 , null , null , false , true);
         }
         
         // Sign up
