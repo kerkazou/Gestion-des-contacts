@@ -1,7 +1,5 @@
 /* Afichage des contactes */
 .user{
-    /* min-width: 350px; */
-    /* max-width: 400px; */
     position: relative;
     align-items: center;
     justify-content: center;
