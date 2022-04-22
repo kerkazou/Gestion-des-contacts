@@ -13,7 +13,7 @@
                         <label for="floatingInput">Username</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input class="form-control mb-3" name="phone"type="text" id="floatingInput" placeholder="name@example.com" required data-parsley-length="[10,10]">
+                        <input class="form-control mb-3" name="phone" type="text" id="floatingInput" placeholder="name@example.com" required data-parsley-length="[10,10]">
                         <label for="floatingInput">Phone</label>
                     </div>
                     <div class="form-floating mb-3">
