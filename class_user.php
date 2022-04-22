@@ -65,4 +65,3 @@
     }
 
     $users = new User();
-?>

@@ -17,4 +17,6 @@
         if(isset($_POST['checked'])){
             $users->creat_setcookie($user['usename'] , $user['email'] , $_POST['password']);
         }
+    }else{
+        header("location:index.php");
     }

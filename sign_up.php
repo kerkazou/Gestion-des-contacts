@@ -20,8 +20,6 @@
         }else{
             echo "Pls, fill the all field.";
         }
-    }
-
-    else{
-        echo "You are not allowed to access this page, Pls return to the main page to fill out the forms.";
+    }else{
+        header("location:index.php");
     }

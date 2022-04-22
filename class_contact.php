@@ -34,6 +34,3 @@
             return $result;
         }
     }
-    // $contact = new Contact();
-
-    // echo $_SERVER['REQUEST_URI'];
