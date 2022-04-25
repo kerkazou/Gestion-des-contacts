@@ -43,7 +43,14 @@
             // ajout a new compts
         public function insert($em , $na , $pas) {
             $db = ConData::connection_database();
-            $sql = "INSERT INTO users VALUES(NULL , '$em' , '$na' ,'$pas' , sysdate())";
+            $sql = "INSERT INTO users VALUES(NULL , '$em' , '$na' ,'$pas' , sysdate() , NULL)";
+            $users = $db->query($sql);
+        }
+
+            // apdate profile
+        public function update($usename , $email , $pass , $date_sign , $image , $id) {
+            $db = ConData::connection_database();
+            $sql = "UPDATE users SET usename = '$usename' , pass = '$pass' , date_sign_up = '$date_sign' , image = '$image' WHERE id = $id";
             $users = $db->query($sql);
         }
 
