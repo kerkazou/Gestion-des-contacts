@@ -49,18 +49,65 @@
         <div class="px-3 position-absolute" id="profile" style="display: none; z-index: 1;">
             <div class="col-md-3 col-sm-6 col-12 text-center float-end text-light">
                 <div class="card profile bg-dark pb-2">
-                    <div class="img_block">
-                        <img class="card-img-top w-100" src="USER/profil.jpg" alt="Your image">
-                    </div>
-                    <form class="card-body gap-5" action="logout.php">
-                        <h4 class="card-title text-center f-bold mb-4"><?php echo $_SESSION['username'] ?></h4>
-                        <p class="text-start ms-3">Signup date: <?php echo $_SESSION['date_sign_up'] ?></p>
-                        <p class="text-start ms-3">Last login: <?php echo $_SESSION['last_login'] ?></p>
-                        <button class="btn btn-outline-secondary mt-4" name="logout" type="submit" style="width: 40%;">Logout</button>
-                  </form>
+                    <form method="POST" action="edite_profile.php">
+                        <div class="img_block">
+                            <img class="card-img-top w-100" id="img_profile" src="USER/profil.jpg" alt="Your image">
+                            <div class="position-absolute top-0" id="uplode_img">
+                                <input type="file" name="file" id="file" accept="image/png, image/jpg" style="opacity: 0%;">
+                                <label class="d-flex flex-column" id="uplode_img" for="file" style="cursor: pointer; opacity: 60%;">
+                                    <i class="bi bi-file-earmark-arrow-up-fill" style="font-size: 100px;"></i>
+                                    <span>Choose a image…</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3" id="edite_username">
+                                <label class="me-4" for="username">Username : </label>
+                                <input type="text" name="usename">
+                            </div >
+                            <div id="username_profile">
+                                <h4 class="card-title text-center f-bold mb-4"><?php echo $_SESSION['username'] ?></h4>
+                                <p class="text-start ms-3">Signup date: <?php echo $_SESSION['date_sign_up'] ?></p>
+                                <p class="text-start ms-3">Last login: <?php echo $_SESSION['last_login'] ?></p>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="d-flex justify-content-center gap-3 my-3" action="logout.php">
+                        <button class="btn btn-outline-secondary" name="logout" id="logout" type="submit" style="width: 40%;">Logout</button>
+                        <button class="btn btn-outline-secondary" name="edite" id="edite" type="button" style="width: 40%;">Edite</button>
+                        <button class="btn btn-outline-secondary" name="save" id="save" type="button" style="width: 40%;">Save</button>
+                        <button class="btn btn-outline-secondary" name="close" id="close" type="button" style="width: 40%;">Close</button>
+                    </form>
                 </div>
             </div>
         </div>
+
+<script>
+    img_profile = document.getElementById('img_profile');
+    username_profile = document.getElementById('username_profile');
+    edite_username = document.getElementById('edite_username');
+    uplode_img = document.getElementById('uplode_img');
+    logout = document.getElementById('logout');
+    save = document.getElementById('save');
+    edite = document.getElementById('edite');
+    close = document.getElementById('close');
+
+    uplode_img.style.display = "none";
+    edite_username.style.display = "none";
+    save.style.display = "none";
+    close.style.display = "none";
+
+    edite.addEventListener('click' , (e) => {
+        img_profile.style.opacity = "40%";
+        uplode_img.style.display = "block";
+        username_profile.style.display = "none";
+        edite_username.style.display = "block";
+        logout.style.display = "none";
+        edite.style.display = "none";
+        save.style.display = "block";
+        close.style.display = "block";
+    });
+</script>
 
         <!-- Navbar de la liste -->
         <div class="d-sm-flex justify-content-between align-items-center py-2 px-5">
@@ -119,7 +166,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
 <script>
     if(window.location.hash == '#add'){
