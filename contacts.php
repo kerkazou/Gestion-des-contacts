@@ -52,21 +52,8 @@
                     <div class="card profile bg-dark pb-2">
                         <div class="img_block">
                             <img class="card-img-top w-100" id="img_profile" src="USER/profil.jpg" alt="Your image">
-                            <div class="position-absolute top-0" id="uplode_img">
-                                <input type="file" name="image" id="file" style="opacity: 0%;">
-                                <label class="d-flex flex-column" id="uplode_img" for="file" style="cursor: pointer; opacity: 60%;">
-                                    <i class="bi bi-file-earmark-arrow-up-fill" style="font-size: 100px;"></i>
-                                    <span>Choose an image…</span>
-                                </label>
-                            </div>
                         </div>
                         <div class="card-body">
-                            <div class="mb-3" id="edite_username">
-                                <label class="me-4 mb-3" for="username">Username : </label>
-                                <input type="text" name="usename" id="username" value="<?php echo $_SESSION['username'] ?>">
-                                <label class="me-4 mb-3" for="password">Password : </label>
-                                <input type="text" name="password" id="password">
-                            </div >
                             <div id="username_profile">
                                 <h4 class="card-title text-center f-bold mb-4"><?php echo $_SESSION['username'] ?></h4>
                                 <p class="text-start ms-3">Signup date: <?php echo $_SESSION['date_sign_up'] ?></p>
@@ -75,9 +62,6 @@
                         </div>
                         <div class="d-flex justify-content-center gap-3 my-3" action="logout.php">
                             <button class="btn btn-outline-secondary" name="logout" id="logout" type="submit" style="width: 40%;">Logout</button>
-                            <button class="btn btn-outline-secondary" name="edite" id="edite" type="button" style="width: 40%;">Edite</button>
-                            <button class="btn btn-outline-secondary" name="save" id="save" type="submit" style="width: 40%;">Save</button>
-                            <button class="btn btn-outline-secondary" name="close" id="close" type="button" style="width: 40%;">Close</button>
                         </div>
                     </div>
                 </form>

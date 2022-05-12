@@ -47,13 +47,6 @@
             $users = $db->query($sql);
         }
 
-            // apdate profile
-        public function update($usename , $email , $pass , $date_sign , $image , $id) {
-            $db = ConData::connection_database();
-            $sql = "UPDATE users SET usename = '$usename' , pass = '$pass' , date_sign_up = '$date_sign' , image = '$image' WHERE id = $id";
-            $users = $db->query($sql);
-        }
-
         // Sign in
         public function login($email , $password) {
             $db = ConData::connection_database();
